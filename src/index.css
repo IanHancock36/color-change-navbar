@@ -80,3 +80,77 @@ transition : filter 300ms;
   width: 20px;
   height: 20px;
 }
+
+.dropdown{
+  position: absolute;
+  top: 58px; /* this allow it to overlap since nav size is 60px a little bigger*/
+  width: 300px; 
+  transform: translate(-45%); /* this moves it over to the left because its on the x axis */
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem; 
+  overflow: hidden; /* this hides child elements that overlap this container */
+
+  transition: height var(--speed) ease; 
+}
+
+
+/* below set up as flex containers this aligns to the center in a row this means vertical alignment.  */
+
+.menu-item{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  /* below is to animate the background*/
+  transition: background var(--speed);
+  padding: 0.5 rem 
+}
+
+.menu-item:hover{
+  background-color: #ff6ec7 
+}
+
+.icon-right{
+  margin-left: auto;
+}
+.menu{
+  width: 100%
+}
+.menu-primary-enter{
+  position: absolute;
+  transform: translateX(-110%); /* makes this invisible off to the left */
+
+}
+
+.menu-primary-enter-active{
+  transform: translateX(0%);
+  transition: all var(--speed) ease; /* this brings it back after the 500ms timeout I belive*/ 
+
+}
+.menu-primary-exit{
+  position: absolute;
+}
+.menu-primary-exit-active{
+transform: translateX(-110%); /* this brings it back to hidden*/
+}
+/* this creates the slide in and out ability */
+
+.menu-secondary-enter{
+  position: absolute;
+  transform: translateX(110%);
+
+}
+
+.menu-secondary-enter-active{
+  transform: translateX(0%);
+  transition: all var(--speed) ease; 
+
+}
+.menu-secondary-exit{
+  position: absolute;
+}
+.menu-secondary-exit-active{
+transform: translateX(110%); 
+}
