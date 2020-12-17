@@ -13,8 +13,8 @@ code {
 }
 
 :root {
-  --bg : #242526; 
-  --bg-accent: #484a4d;
+  --bg : #93E9BE; 
+  --bg-accent: ;
   --text-color: #dadce1;
   --nav-size: 60px;
   --border: 1px solid #474a4d;
@@ -48,3 +48,35 @@ a{
   justify-content: flex-end;
 }
 /* this above makes dropdown go to the right of the navbar */
+
+.nav-item{
+  width: calc(var(--nav-size)*0.8); /* this multiplies the navsize by 80% to make it 80% as big. 0.8 = 80% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon Button how to make a circle  */
+
+.icon-button {
+--button-size: calc (var(--nav-size)*0.5);
+width: var(--button-size);
+height: var(--button-size);
+background-color: white;
+border-radius: 50%;
+padding: 5px;
+margin: 2px;
+display: flex; 
+align-items: center;
+justify-content: center;
+transition : filter 300ms;
+};
+
+.icon-button:hover{
+  filter:brightness(1.2);
+}
+.icon-button {
+  fill: var (--text-color);
+  width: 20px;
+  height: 20px;
+}
